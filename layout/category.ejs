@@ -1,6 +1,6 @@
 <!-- 标签详情页，展示某个标签下的文章列表，url形式：https://yoursite/tags/某个标签/ -->
 
-<!-- <div class="container category-details">
+<div class="container category-details">
   <div class="content-title">
     <h2>
       <span><%- page.tags %></span>
@@ -25,39 +25,4 @@
       <a href="<%- url_for(page.next_link)%>"><i class="iconfont icon-angleright"></i></a>
     <% } %>
   </nav>
-</div> -->
-
-<div class="container archives">
-  <div class="post-list">
-    
-    <%
-      var prev = -1e9;// prev tags
-      var curr;// curr tags
-
-      site.posts.sort('date', -1).each(function(item, index) {
-        curr = item.date
-        if (curr !== prev) {
-          prev = curr;
-      %>
-        <!-- 后续文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span><%- curr %></span>
-          </h2>
-        </div>
-      <%
-        }
-      %>
-      <div class="post-item" title="<%- item.title %>">
-        <div class="time-m-d"><%- item.date.format("MM-DD") %></div>
-        <div class="title">
-          <a href="<%- url_for(item.path) %>">
-            <span><%- item.title %></span>
-          </a>
-        </div>
-      </div>
-    <%
-      });
-    %>
-  </div>
 </div>

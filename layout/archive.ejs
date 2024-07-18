@@ -2,37 +2,53 @@
 
 <!-- last: 按年份把文章分组，当前遍历到的年份 -->
 <!-- now: 当前遍历到的文章的发布年份 -->
+<!-- 归档页，展示本站所有文章，按照标签降序归类 -->
 
 <div class="container archives">
   <div class="post-list">
     <%
-      var prev = -10086;// prev year
-      var curr;// curr year, ever step be updated
+      var tagMap = {}; // 用于存储标签和对应文章的映射
+      var tags = []; // 用于存储所有标签的数组
 
-      site.posts.sort('date', -1).each(function(item, index) {
-        curr = item.date.year()
-        if (curr !== prev) {
-          prev = curr;
-      %>
-        <!-- 后续文章的发布年份呈现 -->
+      // 首先提取所有标签并创建映射
+      site.posts.forEach(function(post) {
+        post.tags.forEach(function(tag) {
+          var tagNames = tag.name.split(/\s+/); // 使用正则表达式分割标签名称
+          tagNames.forEach(function(tagName) {
+            if (!tagName.trim()) return; // 跳过空标签
+      
+            var formattedTagName = tagName.charAt(0).toUpperCase() + tagName.slice(1).toLowerCase(); // 首字母大写
+
+            if (!tagMap[formattedTagName]) {
+              tagMap[formattedTagName] = [];
+              tags.push(formattedTagName); // 将格式化后的标签名称添加到tags数组中
+            }
+            tagMap[formattedTagName].push(post);
+          });
+        });
+      });
+
+      // 按字母顺序对标签进行排序
+      tags.sort();
+
+      tags.forEach(function(tag) {
+        var posts = tagMap[tag];
+    %>
         <div class="content-title">
           <h2>
-            <span><%- curr %></span>
+            <span><%- tag %></span>
           </h2>
         </div>
-      <%
-        }
-      %>
-      <div class="post-item" title="<%- item.title %>">
-        <div class="time-m-d"><%- item.date.format("MM-DD") %></div>
-        <div class="title">
-          <a href="<%- url_for(item.path) %>">
-            <span><%- item.title %></span>
-          </a>
-        </div>
-      </div>
-    <%
-      });
-    %>
+        <% posts.forEach(function(post) { %>
+          <div class="post-item" title="<%- post.title %>">
+            <div class="time-m-d"><%- post.date.format("MM-DD") %></div>
+            <div class="title">
+              <a href="<%- url_for(post.path) %>">
+                <span><%- post.title %></span>
+              </a>
+            </div>
+          </div>
+        <% }); %>
+    <% }); %>
   </div>
 </div>
