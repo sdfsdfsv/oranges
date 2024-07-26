@@ -73,23 +73,22 @@ a:hover {
 }
 
 .flex-container {
-  min-height: calc(100vh - 290px);
+  min-height: calc(10vh - 290px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-left: calc(100vw - 100%);
+  /* margin-left: calc(100vw - 140%); */
   /*transition: all 0.3s ease;*/
 }
 
 .header {
-  padding: 50px 0;
+  padding: 120px 0;
 }
 
 .container {
-  width: 60%;
-  
+  width: 70%;
   margin: 0 auto;
-  margin-left: calc(15%);
+  /* margin-left: calc(15%); */
 }
 
 .index .post-list,
@@ -209,7 +208,7 @@ a:hover {
 .post-item .title .post-top {
   font-weight: 600;
   font-size: 1.7rem;
-  padding-right: 8px;
+  padding-right: 18px;
 }
 
 .tag-details .time-m-d, .archives .time-m-d, .category-details .time-m-d {
@@ -249,6 +248,7 @@ a:hover {
 }
 
 .navbar {
+  
   margin-left: calc(100vw - 100%);
   display: flex;
   align-items: center;
@@ -325,6 +325,13 @@ a:hover {
   .post-navigation {
     padding: 20px 0;
   }
+  .ffimage{
+  display:flex;
+  justify-content: center;
+  /* padding: 0 auto; */
+  /* margin: 0 auto; */
+
+}
 }
 
 @media (max-width: 1200px) and (min-width: 887px) {
@@ -406,25 +413,28 @@ a:hover {
   font-size: 3.2rem;
   font-weight: 600;
   color: var(--color-text-a);
+  padding-top: 30px;
   padding-bottom: 10px;
-  margin-left: calc(20%);
+  margin: 0 auto;
  
 }
 
 .post-details .post-attach {
   font-size: 1.4rem;
   text-align:center;
-  padding-bottom: 30px;
+  padding-bottom: 10px;
   color: var(--color-text-a);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  margin-left: calc(20%);
+  margin: 0 auto;
 }
 
 .post-content {
-  padding-bottom: 1rem;
+  flex: 1;  /* 让文章主体占据大部分空间 */
+  /* padding-bottom: 1rem; */
+  margin-right: 20px; /* 与目录保持一定距离 */
 }
 
 .prev-or-next {
@@ -467,11 +477,14 @@ a:hover {
 
 .post-catalog {
   position: absolute;
-  top: calc(290px + 88px + 30px);
-  right: 50px;
+  top: calc(0px + 88px + 30px);
+  right: 0px;
   width: calc(20% - 50px);
   font-size: 1.4rem;
-  padding-left: 10px;
+  /* padding-left: 0px; */
+  width: 15%;  /* 目录宽度 */
+  margin-left: 20px; /* 与文章主体保持一定距离 */
+  /* float: right; 将目录放置在右侧 */
 }
 
 .post-catalog .title {
@@ -706,4 +719,12 @@ a:hover {
   font-size: 1rem;
   line-height: 1rem;
   white-space: nowrap;
+}
+
+.ffimage img{
+  display: block;
+  justify-content: center;
+  width: 210px;
+  margin: 0 auto;
+  height: auto;
 }

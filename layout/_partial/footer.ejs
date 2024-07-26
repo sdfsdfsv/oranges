@@ -10,7 +10,15 @@
   ]
 %>
 <div class="footer">
-  <div class="social">
+    <!-- <div class="ffimage"  >
+      <a href="/">
+        头像取消懒加载，添加no-lazy
+          <img no-lazy src="/images/bkg.png"  alt=""  >
+      
+      </a>
+      <div class="nickname"><a href="<%- theme.avatar.path %>"><%- theme.avatar.author_nickname %></a></div>
+    </div> -->
+  <!-- <div class="social">
     <ul>
       <% for (let item of theme.footer.social) { %>
         <li>
@@ -26,16 +34,17 @@
         </li>
         <% } %>
     </ul>
-  </div>
-  <% for(let item of theme.footer.more){ %>
+  </div> -->
+  <!-- <% for(let item of theme.footer.more){ %>
     <%
       footerMoreVars.forEach(i => {
         if (item.name.includes(i.name)) {
           item.name = item.name.replace(i.name, i.func)
         }
       })
-    %>
-    <div class="footer-more">
+    %> -->
+  
+    <!-- <div class="footer-more">
       <% if (item.path) { %>
         <a href="<%- item.path %>"><%- item.name %></a>
       <% } else { %>
@@ -50,6 +59,13 @@
           <%- item.name %><span id="<%- item.id %>"></span><%- item.unit %>
         <% } %>
       <% } %>
+
+
     </div>
-  <% } %>
+  <% } %> -->
+
+
+
+
+
 </div>

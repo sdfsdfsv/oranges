@@ -4,7 +4,7 @@
       var prev = -10086;// prev year
       var curr;// curr year, ever step be updated
 
-      site.posts.sort('date', -1).each(function(item, index) {
+      page.posts.sort('date', -1).forEach(function(item) {
         curr = item.date.year()
         if (curr !== prev) {
           prev = curr;
@@ -22,7 +22,11 @@
         <div class="time-m-d"><%- item.date.format("MM-DD") %></div>
         <div class="title">
           <a href="<%- url_for(item.path) %>">
-            <span><%- item.title %></span>
+            <% if (item.top) { %>
+              <span><span title="<%= __('pinned') %>" class="icon iconfont icon-pin-top post-top"></span><%- item.title %></span>
+            <% } else { %>
+              <span><%- item.title %></span>
+            <% } %>
             <!-- <% if (item.tags && item.tags.length) { %>
               <span>Tags: <% item.tags.forEach(function(tag) { %><%- tag.name %><% }); %></span>
             <% } %> -->
@@ -43,3 +47,4 @@
     <% } %>
   </nav>
 </div>
+
