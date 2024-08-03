@@ -1,5 +1,5 @@
 .markdown-body .highlight .gutter pre {
-  background-color: #2d2d2d;
+  background-color: var(--bg-body);
 }
 
 figure {
@@ -26,6 +26,7 @@ figure table .gutter {
 }
 
 figure figcaption {
+  visibility: hidden;
   padding-left: 1rem;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -37,5 +38,5 @@ figure figcaption {
 }
 
 figure table {
-  border-top: 1px solid #ffffff1f;
+  border-top: 1px solid #7d51511f;
 }

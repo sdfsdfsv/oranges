@@ -1,8 +1,10 @@
 /* light scheme */
 :root[color-mode="light"] {
   --bg-body: #FFFFFF;
-  --color-text-base: #666;
-  --color-text-a: #666;
+  --color-text-base: #070707;
+  /* 666 */
+  --color-text-a: #070707;
+  /* 666 */
   --color-text-a-hover: #000000;
   --color-text-a-active: #000000;
   --color-text-sub: #8e8e8e;
@@ -23,10 +25,12 @@
 
 /* dark scheme */
 :root[color-mode="dark"] {
-  --bg-body: #39414e;
+  --bg-body: #0a0a0a;
   /* 2e3440 */
-  --color-text-base: #C1C2C5;
-  --color-text-a: #C1C2C5;
+  --color-text-base: #ececec;
+  /* C1C2C5 */
+  --color-text-a: #ececec;
+  /* C1C2C5 */
   --color-text-a-hover: #FFFFFF;
   --color-text-a-active: #FFFFFF;
   --color-text-sub: #8e8e8e;

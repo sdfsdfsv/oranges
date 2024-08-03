@@ -82,11 +82,11 @@ a:hover {
 }
 
 .header {
-  padding: 120px 0;
+  padding: 50px 0;
 }
 
 .container {
-  width: 70%;
+  width: 65%;
   margin: 0 auto;
   /* margin-left: calc(15%); */
 }
@@ -222,8 +222,7 @@ a:hover {
 }
 
 .avatar img {
-  height: 80px;
-  width: 80px;
+  height: 180px;
   border-radius: 50%;
 }
 
@@ -550,7 +549,7 @@ a:hover {
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: rgba(0,0,0,0.3);
+  /* background-color: rgb(92 92 92 / 30%); */
   transition: background-color 0.2s ease;
   visibility: visible;
   padding-right: 6px;
@@ -566,13 +565,13 @@ a:hover {
 
 .search-overlay.hidden .search-content {
   position: relative;
-  top: 15%;
+  top: 0%;
   opacity: 0;
 }
 
 .search-content {
   position: relative;
-  top: 18%;
+  top: 2%;
   opacity: 1;
   background-color: transparent;
   z-index: 999;
@@ -584,7 +583,7 @@ a:hover {
 
 @media (min-width: 768px) {
   .search-content {
-    width: 520px;
+    width: 80%;
     margin: 0 auto;
   }
 }
@@ -596,7 +595,7 @@ a:hover {
   border-radius: 10px;
   background-color: var(--bg-content-search);
   padding: 0 8px;
-  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .30), 0 1px 3px 1px rgba(60, 64, 67, .15);
+  box-shadow: 0 1px 2px 0 rgba(60, 60, 60, .30), 0 1px 3px 1px rgba(60, 60, 60, .15);
 }
 
 .search-input {
@@ -612,7 +611,7 @@ a:hover {
 }
 
 .search-result {
-  max-height: 350px;
+  max-height: 500px;
   overflow: auto;
   background-color: var(--bg-content-search);
   border-radius: 10px;
@@ -625,9 +624,10 @@ a:hover {
 
 .search-result-list li {
   list-style-type: none;
-  padding: 10px;
-  font-size: 1.6rem;
-  border-bottom: 1px dashed var(--color-divider-md-border);
+  padding: 20px;
+  font-size: 2em;
+  font-weight: bold;
+  border-bottom: 1px solid var(--color-divider-md-border);
 }
 
 .search-result-list li:nth-last-of-type(1) {
@@ -636,7 +636,8 @@ a:hover {
 
 .search-result-abstract {
   padding: 10px 10px 0 10px;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  font-weight: lighter;
   color: var(--color-text-sub);
   word-break: break-all;
 }
