@@ -31,7 +31,7 @@ body.hidden {
   line-height: 150%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 448px) {
   .markdown-body {
     font-size: 1.4rem;
   }
@@ -107,9 +107,13 @@ a:hover {
   display: none;
 }
 
-@media (max-width: 888px) {
+@media (max-width: 338px) {
   .container {
-    width: 90%;
+    display: flex;
+    justify-content: left;
+    padding-right: 10%;
+    padding-left: 10%;
+    min-width: 80%;
   }
   .index .post-list,
   .friend-index .friend-list,
@@ -131,7 +135,7 @@ a:hover {
     padding: 10px;
     z-index: 999;
     color: var(--color-text-a);
-    background-color: rgb(255 255 255 / 50%);
+    /* background-color: rgb(255 255 255 / 50%); */
   }
   .btn-catalog i {
     font-size: 24px;
@@ -169,7 +173,7 @@ a:hover {
   }
 }
 
-@media (max-width: 1200px) and (min-width: 887px) {
+@media (max-width: 1200px) and (min-width: 337px) {
   .index .post-list,
   .friend-index .friend-list,
   .archives .post-list,
@@ -222,8 +226,8 @@ a:hover {
 }
 
 .avatar img {
-  height: 180px;
-  border-radius: 50%;
+  height: 100px;
+  /* border-radius: 1150%; */
 }
 
 .avatar .nickname {
@@ -247,7 +251,7 @@ a:hover {
 }
 
 .navbar {
-  
+
   margin-left: calc(100vw - 100%);
   display: flex;
   align-items: center;
@@ -267,39 +271,43 @@ a:hover {
   padding-bottom: 2px;
 }
 
-.navbar ul li a:hover::after {
+/*
+ .navbar a::after {
   content: "";
   position: absolute;
-  bottom: 3px;
-  left: 5px;
-  height: 6px;
-  opacity: 0.45;
-  background-color: gray;
-  width: 89%;
+  left: 0;
+  bottom: -10px;
+  height: 2px;
+  width: 0; /* 或者使用calc函数 */
+  background: #fff; /* 假设下划线颜色为白色 */
+
+  transition: opacity 1.3s ease;
 }
 
-.navbar ul li.active a {
+/* 为每个链接添加一个类，用于设置初始宽度 */
+.navbar a {
+  width: 0;
+  padding-left: 10px; /* 假设这是链接的内边距，用于计算宽度 */
+}
+
+/* 鼠标悬停时，动态计算线段的宽度 */
+.navbar a:hover::after {
+  width: calc(100vw - 100% - 20px); /* 100vw 是视口宽度，100% 是链接的宽度，20px 是左右内边距的总和 */
+} 
+*/
+
+.navbar li.active a {
   color: var(--color-text-a-active);
 }
 
-.navbar ul li.active a::after {
-  content: "";
-  position: absolute;
-  bottom: 3px;
-  left: 5px;
-  height: 6px;
-  opacity: 0.55;
-  background-color: gray;
-  width: 89%;
-}
 
-@media (max-width: 888px) {
+@media (max-width: 338px) {
   .navbar ul li {
     margin: 0 10px;
   }
 }
 
-@media (max-width: 390px) {
+@media (max-width: 120px) {
   .navbar ul li {
     margin: 0 3px;
   }
@@ -320,7 +328,7 @@ a:hover {
   padding: 0 10px;
 }
 
-@media (max-width: 888px) {
+@media (max-width: 338px) {
   .post-navigation {
     padding: 20px 0;
   }
@@ -333,7 +341,7 @@ a:hover {
 }
 }
 
-@media (max-width: 1200px) and (min-width: 887px) {
+@media (max-width: 1200px) and (min-width: 337px) {
   .post-navigation {
     padding: 20px 20px;
   }
@@ -465,7 +473,7 @@ a:hover {
   align-items: center;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 448px) {
   .time-m-d {
     margin-right: 15px;
   }
@@ -581,7 +589,7 @@ a:hover {
   outline: 0;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 448px) {
   .search-content {
     width: 80%;
     margin: 0 auto;
