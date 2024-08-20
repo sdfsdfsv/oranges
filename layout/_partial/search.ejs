@@ -68,7 +68,7 @@
       'use strict';
       var $input = document.getElementById(search_id);
       var $resultContent = document.getElementById(content_id);
-      $resultContent.innerHTML = "<ul><span class='local-search-empty'><%= __('searchFirst') %><span></ul>";
+      <!-- $resultContent.innerHTML = "<ul><span class='local-search-empty'><%= __('searchFirst') %><span></ul>"; -->
       $.ajax({
         // 0x01. load xml file
         url: path,
@@ -164,7 +164,7 @@
             });
             str += "</ul>";
             if (str.indexOf('<li>') === -1) {
-              return $resultContent.innerHTML = "<ul><span class='local-search-empty'><%= __('searchNoResult') %><span></ul>";
+              <!-- return $resultContent.innerHTML = "<ul><span class='local-search-empty'><%= __('searchNoResult') %><span></ul>"; -->
             }
             $resultContent.innerHTML = str;
           });

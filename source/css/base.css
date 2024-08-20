@@ -557,11 +557,13 @@ a:hover {
   left: 0;
   bottom: 0;
   right: 0;
+  z-index: 1000;
   /* background-color: rgb(92 92 92 / 30%); */
   transition: background-color 0.2s ease;
   visibility: visible;
   padding-right: 6px;
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .search-overlay.hidden {
@@ -621,9 +623,10 @@ a:hover {
 .search-result {
   max-height: 500px;
   overflow: auto;
-  background-color: var(--bg-content-search);
+  /* background-color: var(--bg-content-search); */
   border-radius: 10px;
   margin-top: 8px;
+  scrollbar-width: none;
 }
 
 .search-result ul {

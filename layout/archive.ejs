@@ -5,6 +5,7 @@
 <!-- 归档页，展示本站所有文章，按照标签降序归类 -->
 
 <div class="container archives">
+
   <div class="post-list">
     <%
       var tagMap = {}; // 用于存储标签和对应文章的映射
@@ -29,13 +30,13 @@
       });
 
       // 按字母顺序对标签进行排序
-      tags.sort();
+      //tags.sort();
 
       tags.forEach(function(tag) {
         var posts = tagMap[tag];
     %>
         <div class="content-title">
-          <h2>
+          <h2 href="<%- url_for(tag) %>">
             <span><%- tag %></span>
           </h2>
         </div>
