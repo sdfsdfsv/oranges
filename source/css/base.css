@@ -8,7 +8,9 @@ html, body {
   letter-spacing: 0.001rem;
   background-color: var(--bg-body);
   transition: color 400ms ease-in-out 0s, background-color 400ms ease-in-out 0s;
-  font-family: Consolas, "Liberation Mono", Menlo, Monaco, "Source Han Sans CN", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  /* font-family: Consolas, "Liberation Mono", Menlo, Monaco, "Source Han Sans CN", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; */
+  font-family:Roboto,"Source Han Sans CN", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  
 } 
 body.hidden {
   overflow: hidden;
@@ -27,7 +29,8 @@ body.hidden {
   color: var(--color-text-md-content);
   font-family: 'Noto Serif SC',echo,'Times New Roman',"Liberation Mono", Menlo, Monaco, "Source Han Sans CN", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   font-family:Roboto,"Source Han Sans CN", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-  font-family: "Lato","Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  /* font-family: "Lato","Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif; */
+  
   line-height: 150%;
 }
 
@@ -82,7 +85,7 @@ a:hover {
 }
 
 .header {
-  padding: 50px 0;
+  padding-bottom: 50px;
 }
 
 .container {
@@ -220,13 +223,13 @@ a:hover {
 }
 
 .avatar {
+  height: 0px;
   text-align: center;
-  padding-bottom: 20px;
-  margin-left: calc(100vw - 100%);
+  /* margin-bottom: 8px; */
 }
 
 .avatar img {
-  height: 100px;
+  height: 0px;
   /* border-radius: 1150%; */
 }
 
@@ -234,7 +237,7 @@ a:hover {
   font-size: 2rem;
   font-weight: 600;
   color: var(--color-text-a);
-  padding-top: 10px;
+  /* padding-top: 10px; */
 }
 
 .content {
@@ -251,53 +254,45 @@ a:hover {
 }
 
 .navbar {
-
-  margin-left: calc(100vw - 100%);
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 10px;
+  position: fixed;
+  top: -10;
+  width: 100%;
+  z-index: 9999;
 }
 
 .navbar ul li {
   position: relative;
   display: inline-block;
-  margin: 0 15px;
-  font-size: 1.65rem;
+  font-size: 1rem;
   font-weight: bold;
   text-align: center;
+  opacity: 0.088;
+  border-radius: 0.8px;
+  background: var(--color-text-a);
+  background-color: var(--color-text-a);
+  width: 80px;
+  height: 8px;
+  padding-top: 0px;
 }
 
 .navbar ul li a {
-  padding-bottom: 2px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-indent: -9999px; /* 将文本移动到元素之外 */
+  color: transparent; /* 将文本颜色设置为透明 */
+  text-decoration: none; /* 移除下划线 */
 }
 
-/*
- .navbar a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -10px;
-  height: 2px;
-  width: 0; /* 或者使用calc函数 */
-  background: #fff; /* 假设下划线颜色为白色 */
-
-  transition: opacity 1.3s ease;
-}
-
-/* 为每个链接添加一个类，用于设置初始宽度 */
-.navbar a {
-  width: 0;
-  padding-left: 10px; /* 假设这是链接的内边距，用于计算宽度 */
-}
-
-/* 鼠标悬停时，动态计算线段的宽度 */
-.navbar a:hover::after {
-  width: calc(100vw - 100% - 20px); /* 100vw 是视口宽度，100% 是链接的宽度，20px 是左右内边距的总和 */
-} 
-*/
-
-.navbar li.active a {
-  color: var(--color-text-a-active);
+.navbar ul li.active a {
+  display:block;
+  opacity: 1.; /* 确保激活时不透明 */
+  background: var(--color-text-a);
+  background-color: var(--color-text-a);
 }
 
 
@@ -670,7 +665,7 @@ a:hover {
 
 .tools-bar .tools-bar-item {
   margin: 10px 0;
-  font-weight: bold;
+  font-weight:bold;
 }
 
 .tools-bar .back-to-top.hidden {

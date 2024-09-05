@@ -46,6 +46,27 @@
     var randomImage = images[randomIndex];
     document.getElementById('avatar-image').src = randomImage;
   });
+  document.addEventListener('DOMContentLoaded', function() {
+    // ... 你之前的代码 ...
+  
+    // 获取当前页面的路径
+    var currentPath = window.location.pathname;
+  
+    // 获取所有导航项
+    var navItems = document.querySelectorAll('.navbar .nav-item');
+  
+    // 移除所有导航项的 active 类
+    navItems.forEach(function(item) {
+      item.classList.remove('active');
+    });
+  
+    // 为当前页面的导航项添加 active 类
+    navItems.forEach(function(item) {
+      if (item.getAttribute('data-path') === currentPath) {
+        item.classList.add('active');
+      }
+    });
+  });
 </script>
 
 <%- js(['/js/activeNav.js']) %>
