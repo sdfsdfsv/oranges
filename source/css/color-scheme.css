@@ -1,6 +1,6 @@
 /* light scheme */
 :root[color-mode="light"] {
-  --bg-body: #FFFFFF;
+  --bg-body: #F0F0F0;
   --color-text-base: #070707;
   /* 666 */
   --color-text-a: #070707;
@@ -25,7 +25,7 @@
 
 /* dark scheme */
 :root[color-mode="dark"] {
-  --bg-body: #0a0a0a;
+  --bg-body: #303030;
   /* 2e3440 */
   --color-text-base: #ececec;
   /* C1C2C5 */
