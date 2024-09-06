@@ -256,26 +256,28 @@ a:hover {
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-bottom: 10px;
-  position: fixed;
-  top: -10;
-  width: 100%;
+  justify-content: space-between; /* 使列表项分布在两端，中间留出空间 */
+  /* margin-bottom: 10px; */
+  top: 0; /* 位于顶部 */
+  width: 100%; /* 宽度始终与网页宽度相同 */
   z-index: 9999;
 }
 
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around; /* 将列表项平均分布 */
+}
+
 .navbar ul li {
-  position: relative;
-  display: inline-block;
-  font-size: 1rem;
-  font-weight: bold;
+  flex: 1; /* 每个列表项占据相等的空间 */
   text-align: center;
-  opacity: 0.088;
+  opacity: 0; /* 设置透明度为0，使按钮不可见 */
   border-radius: 0.8px;
-  background: var(--color-text-a);
-  background-color: var(--color-text-a);
-  width: 80px;
-  height: 8px;
+  height: 60px;
   padding-top: 0px;
 }
 
@@ -283,18 +285,11 @@ a:hover {
   display: block;
   width: 100%;
   height: 100%;
-  text-indent: -9999px; /* 将文本移动到元素之外 */
-  color: transparent; /* 将文本颜色设置为透明 */
+  text-indent: 0; /* 将文本移动回可见位置 */
+  color: transparent; /* 保持文本颜色透明 */
   text-decoration: none; /* 移除下划线 */
+  pointer-events: auto; /* 确保链接可以接收点击事件 */
 }
-
-.navbar ul li.active a {
-  display:block;
-  opacity: 1.; /* 确保激活时不透明 */
-  background: var(--color-text-a);
-  background-color: var(--color-text-a);
-}
-
 
 @media (max-width: 338px) {
   .navbar ul li {
