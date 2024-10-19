@@ -5,7 +5,7 @@
 
 html, body {
   font-size: 10px;
-  letter-spacing: 0.001rem;
+  letter-spacing: 0.01rem;
   background-color: var(--bg-body);
   transition: color 400ms ease-in-out 0s, background-color 400ms ease-in-out 0s;
   /* font-family: Consolas, "Liberation Mono", Menlo, Monaco, "Source Han Sans CN", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; */
@@ -35,11 +35,30 @@ body.hidden {
 }
 
 @media (max-width: 448px) {
-  .markdown-body {
-    font-size: 1.4rem;
+  .post-item {
+    flex-direction: column; /* 垂直堆叠 */
+    align-items: flex-start; /* 左对齐 */
+    margin-bottom: 15px; /* 增加间距 */
   }
-}
 
+  .post-item .time-m-d {
+    margin-right: 0; /* 不需要右边距 */
+    margin-bottom: 10px; /* 增加底部间距 */
+  }
+
+  .post-item .title {
+    font-size: 1.5rem; /* 调整标题字体大小 */
+  }
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    /* margin-left: calc(15%); */
+  }
+  .header {
+    padding-bottom: 10px ;
+  }
+  
+}
 #app {
   position: relative;
   margin: 0 auto;
@@ -89,8 +108,9 @@ a:hover {
 }
 
 .container {
-  width: 65%;
+  width: calc(max(65%, 100% - 40px)); /* 100% - 20px (左) - 20px (右) */
   margin: 0 auto;
+  padding: 0 20px; /* 添加左右 padding */
   /* margin-left: calc(15%); */
 }
 
@@ -335,8 +355,13 @@ a:hover {
   .post-navigation {
     padding: 20px 20px;
   }
+  .iconfont{
+    font-size:30px !important;
+  }
 }
-
+.iconfont{
+  font-size: large !important;
+}
 .tag-list li {
   font-size: 1.6rem;
   display: inline-block;
@@ -410,7 +435,7 @@ a:hover {
   font-size: 3.2rem;
   font-weight: 600;
   color: var(--color-text-a);
-  padding-top: 30px;
+  /* padding-top: 30px; */
   padding-bottom: 10px;
   margin: 0 auto;
  
@@ -470,13 +495,22 @@ a:hover {
   .tag-details .time-m-d, .archives .time-m-d {
     margin: 0 15px;
   }
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    /* margin-left: calc(15%); */
+  }
+  .header {
+    padding-bottom: 10px;
+  }
+  
 }
 
 .post-catalog {
   position: absolute;
   top: calc(0px + 88px + 30px);
   right: 0px;
-  width: calc(20% - 50px);
+  /* width: calc(20% - 50px); */
   font-size: 1.4rem;
   /* padding-left: 0px; */
   width: 15%;  /* 目录宽度 */
@@ -586,6 +620,12 @@ a:hover {
     width: 80%;
     margin: 0 auto;
   }
+  .container {
+    width: 68%;
+    margin: 0 auto;
+    /* margin-left: calc(15%); */
+  }
+
 }
 
 .search-title {
@@ -729,4 +769,7 @@ a:hover {
   width: 210px;
   margin: 0 auto;
   height: auto;
+}
+.footer{
+  padding-top: 55px !important;
 }
