@@ -155,3 +155,29 @@
     <% } %>
   </div>
 <% } %>
+
+<script>
+  document.addEventListener('keydown', function(event) {
+    if (event.code === 'ArrowLeft') {
+        event.preventDefault(); // 防止页面滚动
+        const link = document.querySelector('.icon-chevronleft');
+        if (link) {
+            // 找到包含该图标的父元素（链接）
+            link.closest('a').click();
+        }
+    }
+});
+</script>
+
+<script>
+  document.addEventListener('keydown', function(event) {
+    if (event.code === 'ArrowRight') {
+        event.preventDefault(); // 防止页面滚动
+        const link = document.querySelector('.icon-chevronright');
+        if (link) {
+            // 找到包含该图标的父元素（链接）
+            link.closest('a').click();
+        }
+    }
+});
+</script>

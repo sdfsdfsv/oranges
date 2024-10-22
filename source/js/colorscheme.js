@@ -3,24 +3,48 @@ let switchHandle = document.querySelector('#switch-color-scheme')
 let themeIcon = document.querySelector('#theme-icon')
 var html = document.documentElement
 
+function getPreferredTheme() {
+    const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    return darkModeMediaQuery.matches ? 'dark' : 'light';
+}
+
 const switchMode = () => {
     let attr = html.getAttribute('color-mode')
-    let colorMode = 'light'
+    let colorMode = ''
     if (attr === 'light') {
-        html.setAttribute('color-mode', 'dark')
         themeIcon.classList = 'iconfont icon-sun'
         colorMode = 'dark'
     } else {
-        html.setAttribute('color-mode', 'light')
         themeIcon.classList = 'iconfont icon-moon'
         colorMode = 'light'
     }
-    localStorage.setItem('color-mode', colorMode)
+
+    if (getPreferredTheme() == colorMode){
+        localStorage.removeItem('color-mode');
+    }
+    else
+        localStorage.setItem('color-mode', colorMode)
+
+    html.setAttribute('color-mode', colorMode)
+
 }
 
 switchHandle.addEventListener('click', switchMode, false)
 
-const currColorMode = localStorage.getItem('color-mode')
+function getTheme(){
+    var html = document.documentElement
+    const colorMode = localStorage.getItem('color-mode')
+    if (colorMode) {
+      return colorMode
+    }
+    function getPreferredTheme() {
+        const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        return darkModeMediaQuery.matches ? 'dark' : 'light';
+    }
+      return getPreferredTheme();
+}
+const currColorMode = getTheme()
+html.setAttribute('color-mode', currColorMode)
 if (currColorMode === 'light') {
     themeIcon.classList = 'iconfont icon-moon'
 } else {

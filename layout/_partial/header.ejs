@@ -54,7 +54,7 @@
   <% } %>
 
   <!-- Raleway-Font -->
-  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet"> -->
 
   <!-- hexo site css -->
   <link rel="stylesheet" href="/css/main.css" />
@@ -98,10 +98,19 @@
   <% } %>
 
   <script>
-    var html = document.documentElement
-    const colorMode = localStorage.getItem('color-mode')
-    if (colorMode) {
-      document.documentElement.setAttribute('color-mode', colorMode)
+    function getTheme(){
+      var html = document.documentElement
+      const colorMode = localStorage.getItem('color-mode')
+      if (colorMode) {
+        return colorMode
+      }
+      function getPreferredTheme() {
+        const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        return darkModeMediaQuery.matches ? 'dark' : 'light';
+      }
+      // Usage
+      return getPreferredTheme();
     }
+    document.documentElement.setAttribute('color-mode',getTheme())
   </script>
 </head>

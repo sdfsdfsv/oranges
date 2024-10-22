@@ -4,4 +4,17 @@
   </a>
 </div>
 
+<script>
+  document.addEventListener('keydown', function(event) {
+    if (event.code === 'ArrowUp') {
+        event.preventDefault(); // 防止页面滚动
+        const link = document.querySelector('.icon-chevronup');
+        if (link) {
+            // 找到包含该图标的父元素（链接）
+            link.closest('a').click();
+        }
+    }
+});
+</script>
+
 <%- js(['/js/backtotop.js']) %>

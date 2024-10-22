@@ -1,5 +1,5 @@
 <% if (theme.search.enable) { %>
-  <% if (!page.permalink) { %>
+  <% if (true) { %>
   <div class="search-icon tools-bar-item" id="search-icon">
     <a href="javascript: void(0)">
       <i class="iconfont icon-search"></i>
@@ -29,6 +29,18 @@
     </div>
   </div>
 
+  <script>
+    document.addEventListener('keydown', function(event) {
+      if (event.code === 'Space') {
+          event.preventDefault(); // 防止页面滚动
+          const link = document.querySelector('.icon-search');
+          if (link) {
+              // 找到包含该图标的父元素（链接）
+              link.closest('a').click();
+          }
+      }
+  });
+</script>
   <script type="text/javascript">
     var inputArea = document.querySelector("#search-input")
     var searchOverlayArea = document.querySelector(".search-overlay")
@@ -44,17 +56,18 @@
     }
 
     function openOrHideSearchContent() {
-      let isHidden = searchOverlayArea.classList.contains('hidden')
+      let isHidden = searchOverlayArea.classList.contains('hidden');
       if (isHidden) {
-        searchOverlayArea.classList.remove('hidden')
-        document.body.classList.add('hidden')
-        // inputArea.focus()
+        searchOverlayArea.classList.remove('hidden');
+        document.body.classList.add('hidden');
+        inputArea.focus(); // Automatically focus on the input area
       } else {
-        searchOverlayArea.classList.add('hidden')
-        document.body.classList.remove('hidden')
+        searchOverlayArea.classList.add('hidden');
+        document.body.classList.remove('hidden');
       }
     }
 
+    
     function blurSearchContent(e) {
       if (e.target === searchOverlayArea) {
         openOrHideSearchContent()

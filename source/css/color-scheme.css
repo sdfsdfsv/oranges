@@ -25,7 +25,7 @@
 
 /* dark scheme */
 :root[color-mode="dark"] {
-  --bg-body: #242424;
+  --bg-body: #000000;
   /* 2e3440 */
   --color-text-base: #ececec;
   /* C1C2C5 */
