@@ -215,6 +215,8 @@ a:hover {
   margin-bottom: 20px;
   align-items: center;
   line-height: 21px;
+  border-radius: 5px;
+  border-color: #fff;
 }
 
 .post-item .time-m-d {
@@ -511,8 +513,9 @@ a:hover {
 
 .post-catalog {
   position: absolute;
-  top: calc(0px + 88px + 30px);
+  top: 0;
   right: 0px;
+  padding-top: 10rem;
   /* width: calc(20% - 50px); */
   font-size: 1.4rem;
   /* padding-left: 0px; */
