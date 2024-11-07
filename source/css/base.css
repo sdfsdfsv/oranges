@@ -11,7 +11,7 @@ html, body {
   /* font-family: Consolas, "Liberation Mono", Menlo, Monaco, "Source Han Sans CN", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; */
   /* font-family:Roboto,"Source Han Sans CN", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
-  
+
 } 
 body.hidden {
   overflow: hidden;
@@ -111,7 +111,7 @@ a:hover {
 }
 
 .container {
-  width: calc(max(65%, 100% - 40px)); /* 100% - 20px (左) - 20px (右) */
+  width: calc(min(55%, 100% - 40px)); /* 100% - 20px (左) - 20px (右) */
   margin: 0 auto;
   padding: 0 20px; /* 添加左右 padding */
   /* margin-left: calc(15%); */
@@ -612,27 +612,17 @@ a:hover {
 .search-content {
   position: relative;
   top: 2%;
+  width: 80%;
   opacity: 1;
   background-color: transparent;
   z-index: 999;
   border-radius: 10px;
-  margin: 0 2rem;
+  
+  margin: 0 auto;
   transition: top 0.2s ease, opacity 0.2s ease;
   outline: 0;
 }
 
-@media (min-width: 448px) {
-  .search-content {
-    width: 80%;
-    margin: 0 auto;
-  }
-  .container {
-    width: 68%;
-    margin: 0 auto;
-    /* margin-left: calc(15%); */
-  }
-
-}
 
 .search-title {
   display: flex;
